@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Android和操作系统相关的博客]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://xuyunnan.github.io/"/>
+  <updated>2015-02-10T16:54:27.565Z</updated>
+  <id>http://xuyunnan.github.io/</id>
+  
+  <author>
+    <name><![CDATA[XuYunnan]]></name>
+    <email><![CDATA[xuyn14@sei.pku.edu.cn]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[]]></title>
+    <link href="http://xuyunnan.github.io/2015/02/11/Express-js/"/>
+    <id>http://xuyunnan.github.io/2015/02/11/Express-js/</id>
+    <published>2015-02-10T16:51:28.000Z</published>
+    <updated>2015-02-10T16:51:28.000Z</updated>
+    <content type="html"><![CDATA[<p>title: Express.js<br>date: 2015-02-10 16:53:31</p>
+<h2 id="tags:[express,_nodejs]">tags:[express, nodejs]</h2>
+<h3 id="Express-js初探">Express.js初探</h3>
+<p>Express是一个非常流行的nodeJS的MVC框架。现在我们开始学习它。</p>
+<ul>
+<li>项目主页   <a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
+<li>Github   <a href="https://github.com/strongloop/express" target="_blank" rel="external">https://github.com/strongloop/express</a></li>
+</ul>
+<p>安装express：<br><code>sudo npm -g install express</code></p>
+<p>下载express代码<br><code>git clone https://github.com/strongloop/express.git</code></p>
+<p>在Express的Github项目中有个Example目录，里面有很多例子的源代码，但是要在目录里面进行<code>npm install</code> 之后才能使用。</p>
+<h4 id="Hello_world程序">Hello world程序</h4>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'../../'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res)</span> </span>{</div><div class="line">  res.send(<span class="string">'Hello World!'</span>)</div><div class="line">  })</div><div class="line">app.get(<span class="string">'/user'</span>,<span class="function"><span class="keyword">function</span><span class="params">(req, res)</span></span>{</div><div class="line">  res.send(<span class="string">"hehehe"</span>);</div><div class="line">  })</div><div class="line">app.post(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res)</span> </span>{</div><div class="line">  res.send(<span class="string">'Got a POST request'</span>);</div><div class="line">})</div><div class="line">app.put(<span class="string">'/user'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res)</span> </span>{</div><div class="line">  res.send(<span class="string">'Got a PUT request at /user'</span>);</div><div class="line">})</div><div class="line">app.get(<span class="string">'/file/:name'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(req, res, next)</span> </span>{</div><div class="line">  <span class="keyword">var</span> options = {</div><div class="line">      root: __dirname + <span class="string">'/public/'</span>,</div><div class="line">      dotfiles: <span class="string">'deny'</span>,</div><div class="line">      headers: {</div><div class="line">        <span class="string">'x-timestamp'</span>: <span class="built_in">Date</span>.now(),</div><div class="line">        <span class="string">'x-sent'</span>: <span class="literal">true</span></div><div class="line">      }</div><div class="line">    };</div><div class="line">  <span class="keyword">var</span> fileName = req.params.name;</div><div class="line">  res.sendFile(fileName, options, <span class="function"><span class="keyword">function</span> <span class="params">(err)</span> </span>{</div><div class="line">  <span class="keyword">if</span> (err) {</div><div class="line">      <span class="built_in">console</span>.log(err);</div><div class="line">      res.status(err.status).end();</div><div class="line">    }</div><div class="line">  <span class="keyword">else</span> {</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Sent:'</span>, fileName);</div><div class="line">    }</div><div class="line">  });</div><div class="line">  })</div><div class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{</div><div class="line">  <span class="keyword">var</span> host = server.address().address</div><div class="line">  <span class="keyword">var</span> port = server.address().port</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Example app listening at http://%s:%s'</span>, host, port)</div><div class="line">})</div></pre></td></tr></table></figure>
+
+<p>变量app实际上是Javascript的一个函数，关于Javascript函数知识的介绍，可以查看<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions_and_function_scope" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions_and_function_scope</a></p>
+<p><a href="http://www.cnblogs.com/tomxu/archive/2012/01/30/2326372.html" target="_blank" rel="external">http://www.cnblogs.com/tomxu/archive/2012/01/30/2326372.html</a></p>
+<h4 id="app-listen(port,_[hostname],_[backlog],_[callback])">app.listen(port, [hostname], [backlog], [callback])</h4>
+<h4 id="app-METHOD(path,_callback_[,_callback_…])">app.METHOD(path, callback [, callback …])</h4>
+<p>其中methodh常用的包括 get 、post 、 get等等<br><a href="http://expressjs.com/guide/routing.html" target="_blank" rel="external">http://expressjs.com/guide/routing.html</a></p>
+<p>res是回调函数之一<br>有download,end,json,jsonp,redirect,render,send,sendFile,sendStatus等等函数</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>title: Express.js<br>date: 2015-02-10 16:53:31</p>
+<h2 id="tags:[express,_nodejs]">tags:[express, nodejs]</h2>
+<h3 id="Express-js初探">Expr]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Java反射机制详解]]></title>
+    <link href="http://xuyunnan.github.io/2015/01/03/Java%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://xuyunnan.github.io/2015/01/03/Java反射机制详解/</id>
+    <published>2015-01-03T07:03:41.000Z</published>
+    <updated>2015-01-03T11:14:08.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Java反射机制概述">Java反射机制概述</h2>
+<p>这是从Oracle的Java教程<a href="http://docs.oracle.com/javase/tutorial/reflect/index.html" target="_blank" rel="external">The Reflection API</a>中摘下来的文字。</p>
+<h3 id="Java反射的功能举例">Java反射的功能举例</h3>
+<h4 id="1-_Extensibility_Features">1. Extensibility Features</h4>
+<blockquote>
+<p>An application may make use of external, user-defined classes by creating instances of extensibility objects using their fully-qualified names.</p>
+</blockquote>
+<p>应用程序可以使用外部的，用户自定义的类，通过创建可拓展的对象的实例，<br>这需要用到它们的完整的名字。</p>
+<h4 id="2-_Class_Browsers_and_Visual_Development_Environments">2. Class Browsers and Visual Development Environments</h4>
+<blockquote>
+<p>A class browser needs to be able to enumerate the members of classes. Visual development environments can benefit from making use of type information available in reflection to aid the developer in writing correct code.</p>
+</blockquote>
+<p>类浏览器需要能够列举类中的全面成员，可视化开发环境需要使用反射来<br>在开发者编码时提供类型的信息。</p>
+<h4 id="3-_Debuggers_and_Test_Tools">3. Debuggers and Test Tools</h4>
+<blockquote>
+<p>Debuggers need to be able to examine private members on classes. Test harnesses can make use of reflection to systematically call a discoverable set APIs defined on a class, to insure a high level of code coverage in a test suite.</p>
+</blockquote>
+<p>调试工具需要能够测试类中的private成员，测试工具也需要获得类中的全部<br>API来保证测试套件对测试代码覆盖率。</p>
+<hr>
+<h3 id="Java反射中的class">Java反射中的class</h3>
+<p>Java语言中的对象object，要么是一个基本类型，比如boolean, byte, short, int, long, char, float, 或者double；要么是个引用类型，比如java.lang.String，java.lang.Double，或者是java.io.Serializable。</p>
+<p>对于每个对象，Java虚拟机都会有一个不可改的java.lang.Class类型的实例来提供<br>访问那个对象的成员的接口。所有反射的API入口也是在这个java.lang.Class<br>中。<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" target="_blank" rel="external">该类的方法和成员列表</a>。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Java反射机制概述">Java反射机制概述</h2>
+<p>这是从Oracle的Java教程<a href="http://docs.oracle.com/javase/tutorial/reflect/index.html" target="_blank" r]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android动态加载技术分析]]></title>
+    <link href="http://xuyunnan.github.io/2015/01/02/Android%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90/"/>
+    <id>http://xuyunnan.github.io/2015/01/02/Android动态加载技术分析/</id>
+    <published>2015-01-02T05:34:49.000Z</published>
+    <updated>2015-01-02T05:34:49.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    <summary type="html">
+    <![CDATA[]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android应用动态分析]]></title>
+    <link href="http://xuyunnan.github.io/2014/12/31/Android%E5%BA%94%E7%94%A8%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90/"/>
+    <id>http://xuyunnan.github.io/2014/12/31/Android应用动态分析/</id>
+    <published>2014-12-31T03:05:45.000Z</published>
+    <updated>2014-12-31T07:13:32.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="现有框架概述">现有框架概述</h3>
+<ol>
+<li>Droidbox ＆ TaintDroid<br> Droidbox和TaintDroid是基于OSDI‘10的一篇文章 <a href="https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Enck.pdf" target="_blank" rel="external">TaintDroid: An Information-Flow Tracking System for Realtime Privacy<br>Monitoring on Smartphones</a> 的动态分析技术,该技术</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="现有框架概述">现有框架概述</h3>
+<ol>
+<li>Droidbox ＆ TaintDroid<br> Droidbox和TaintDroid是基于OSDI‘10的一篇文章 <a href="https://www.usenix.org/legacy/eve]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <link href="http://xuyunnan.github.io/2014/12/31/Hello-Hexo/"/>
+    <id>http://xuyunnan.github.io/2014/12/31/Hello-Hexo/</id>
+    <published>2014-12-31T02:14:44.000Z</published>
+    <updated>2014-12-31T02:14:44.000Z</updated>
+    <content type="html"><![CDATA[]]></content>
+    <summary type="html">
+    <![CDATA[]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://xuyunnan.github.io/2014/12/31/hello-world/"/>
+    <id>http://xuyunnan.github.io/2014/12/31/hello-world/</id>
+    <published>2014-12-31T02:12:25.000Z</published>
+    <updated>2014-12-31T02:12:25.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
