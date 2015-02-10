@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Android和操作系统相关的博客</title>
+    <title>Express.js | Android和操作系统相关的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="XuYunnan">
     
-    <meta name="description" content="title: Express.jsdate: 2015-02-10 16:53:31
-tags:[express, nodejs]
-Express.js初探
+    <meta name="description" content="Express.js初探
 Express是一个非常流行的nodeJS的MVC框架。现在我们开始学习它。
 
 项目主页   http://expressjs.com/
-Gi">
+Github   https://github.com/strongloop/express
+
+安装express：sudo npm -">
     
     
     
@@ -72,15 +72,15 @@ Gi">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/02/11/Express-js/" title="" itemprop="url"></a>
+      <a href="/2015/02/10/Express-js/" title="Express.js" itemprop="url">Express.js</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xuyunnan.github.io" title="XuYunnan">XuYunnan</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-02-10T16:51:28.000Z" itemprop="datePublished">2月 11 2015</time>
-    更新日期:<time datetime="2015-02-10T16:51:28.000Z" itemprop="dateModified">2月 11 2015</time>
+    <time datetime="2015-02-10T08:53:31.000Z" itemprop="datePublished">2月 10 2015</time>
+    更新日期:<time datetime="2015-02-10T17:01:11.000Z" itemprop="dateModified">2月 11 2015</time>
     
   </p>
 </header>
@@ -89,12 +89,10 @@ Gi">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:[express,_nodejs]"><span class="toc-number">1.</span> <span class="toc-text">tags:[express, nodejs]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-js初探"><span class="toc-number">1.1.</span> <span class="toc-text">Express.js初探</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello_world程序"><span class="toc-number">1.1.1.</span> <span class="toc-text">Hello world程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-listen(port,_[hostname],_[backlog],_[callback])"><span class="toc-number">1.1.2.</span> <span class="toc-text">app.listen(port, [hostname], [backlog], [callback])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-METHOD(path,_callback_[,_callback_…])"><span class="toc-number">1.1.3.</span> <span class="toc-text">app.METHOD(path, callback [, callback …])</span></a></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-js初探"><span class="toc-number">1.</span> <span class="toc-text">Express.js初探</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello_world程序"><span class="toc-number">1.1.</span> <span class="toc-text">Hello world程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-listen(port,_[hostname],_[backlog],_[callback])"><span class="toc-number">1.2.</span> <span class="toc-text">app.listen(port, [hostname], [backlog], [callback])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-METHOD(path,_callback_[,_callback_…])"><span class="toc-number">1.3.</span> <span class="toc-text">app.METHOD(path, callback [, callback …])</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>title: Express.js<br>date: 2015-02-10 16:53:31</p>
-<h2 id="tags:[express,_nodejs]">tags:[express, nodejs]</h2>
-<h3 id="Express-js初探">Express.js初探</h3>
+		<h3 id="Express-js初探">Express.js初探</h3>
 <p>Express是一个非常流行的nodeJS的MVC框架。现在我们开始学习它。</p>
 <ul>
 <li>项目主页   <a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
@@ -121,7 +119,7 @@ Gi">
 
 <div class="article-share" id="share">
 
-  <div data-url="http://xuyunnan.github.io/2015/02/11/Express-js/" data-title="Android和操作系统相关的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://xuyunnan.github.io/2015/02/10/Express-js/" data-title="Express.js | Android和操作系统相关的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -151,7 +149,7 @@ Gi">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:[express,_nodejs]"><span class="toc-number">1.</span> <span class="toc-text">tags:[express, nodejs]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-js初探"><span class="toc-number">1.1.</span> <span class="toc-text">Express.js初探</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello_world程序"><span class="toc-number">1.1.1.</span> <span class="toc-text">Hello world程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-listen(port,_[hostname],_[backlog],_[callback])"><span class="toc-number">1.1.2.</span> <span class="toc-text">app.listen(port, [hostname], [backlog], [callback])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-METHOD(path,_callback_[,_callback_…])"><span class="toc-number">1.1.3.</span> <span class="toc-text">app.METHOD(path, callback [, callback …])</span></a></li></ol></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Express-js初探"><span class="toc-number">1.</span> <span class="toc-text">Express.js初探</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Hello_world程序"><span class="toc-number">1.1.</span> <span class="toc-text">Hello world程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-listen(port,_[hostname],_[backlog],_[callback])"><span class="toc-number">1.2.</span> <span class="toc-text">app.listen(port, [hostname], [backlog], [callback])</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#app-METHOD(path,_callback_[,_callback_…])"><span class="toc-number">1.3.</span> <span class="toc-text">app.METHOD(path, callback [, callback …])</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">

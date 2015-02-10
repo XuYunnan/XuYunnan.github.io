@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://xuyunnan.github.io/"/>
-  <updated>2015-02-10T16:54:27.565Z</updated>
+  <updated>2015-02-10T17:05:35.918Z</updated>
   <id>http://xuyunnan.github.io/</id>
   
   <author>
@@ -15,14 +15,12 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[]]></title>
-    <link href="http://xuyunnan.github.io/2015/02/11/Express-js/"/>
-    <id>http://xuyunnan.github.io/2015/02/11/Express-js/</id>
-    <published>2015-02-10T16:51:28.000Z</published>
-    <updated>2015-02-10T16:51:28.000Z</updated>
-    <content type="html"><![CDATA[<p>title: Express.js<br>date: 2015-02-10 16:53:31</p>
-<h2 id="tags:[express,_nodejs]">tags:[express, nodejs]</h2>
-<h3 id="Express-js初探">Express.js初探</h3>
+    <title><![CDATA[Express.js]]></title>
+    <link href="http://xuyunnan.github.io/2015/02/10/Express-js/"/>
+    <id>http://xuyunnan.github.io/2015/02/10/Express-js/</id>
+    <published>2015-02-10T08:53:31.000Z</published>
+    <updated>2015-02-10T17:01:11.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Express-js初探">Express.js初探</h3>
 <p>Express是一个非常流行的nodeJS的MVC框架。现在我们开始学习它。</p>
 <ul>
 <li>项目主页   <a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
@@ -42,9 +40,10 @@
 <p>res是回调函数之一<br>有download,end,json,jsonp,redirect,render,send,sendFile,sendStatus等等函数</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>title: Express.js<br>date: 2015-02-10 16:53:31</p>
-<h2 id="tags:[express,_nodejs]">tags:[express, nodejs]</h2>
-<h3 id="Express-js初探">Expr]]>
+    <![CDATA[<h3 id="Express-js初探">Express.js初探</h3>
+<p>Express是一个非常流行的nodeJS的MVC框架。现在我们开始学习它。</p>
+<ul>
+<li>项目主页   <a href="http://expressjs.com/" target]]>
     </summary>
     
   </entry>
