@@ -4,10 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello Hexo | Android和操作系统相关的博客</title>
+    <title>Java反射机制详解 | Android和操作系统相关的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="XuYunnan">
+    
+    <meta name="description" content="Java反射机制概述
+这是从Oracle的Java教程The Reflection API中摘下来的文字。
+Java反射的功能举例
+1. Extensibility Features
+
+An application may make use of external, user-defined cla">
     
     
     
@@ -64,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/12/31/Hello-Hexo/" title="Hello Hexo" itemprop="url">Hello Hexo</a>
+      <a href="/2015/01/03/Java反射机制详解/" title="Java反射机制详解" itemprop="url">Java反射机制详解</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://xuyunnan.github.io" title="XuYunnan">XuYunnan</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-12-31T02:14:44.000Z" itemprop="datePublished">12月 31 2014</time>
-    更新日期:<time datetime="2014-12-31T02:14:44.000Z" itemprop="dateModified">12月 31 2014</time>
+    <time datetime="2015-01-03T07:03:41.000Z" itemprop="datePublished">1月 3 2015</time>
+    更新日期:<time datetime="2015-01-03T11:14:08.000Z" itemprop="dateModified">1月 3 2015</time>
     
   </p>
 </header>
@@ -81,10 +88,32 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java反射机制概述"><span class="toc-number">1.</span> <span class="toc-text">Java反射机制概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java反射的功能举例"><span class="toc-number">1.1.</span> <span class="toc-text">Java反射的功能举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_Extensibility_Features"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. Extensibility Features</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_Class_Browsers_and_Visual_Development_Environments"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. Class Browsers and Visual Development Environments</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_Debuggers_and_Test_Tools"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. Debuggers and Test Tools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java反射中的class"><span class="toc-number">1.2.</span> <span class="toc-text">Java反射中的class</span></a></li></ol></li></ol>
 		</div>
 		
-		  
+		<h2 id="Java反射机制概述">Java反射机制概述</h2>
+<p>这是从Oracle的Java教程<a href="http://docs.oracle.com/javase/tutorial/reflect/index.html" target="_blank" rel="external">The Reflection API</a>中摘下来的文字。</p>
+<h3 id="Java反射的功能举例">Java反射的功能举例</h3>
+<h4 id="1-_Extensibility_Features">1. Extensibility Features</h4>
+<blockquote>
+<p>An application may make use of external, user-defined classes by creating instances of extensibility objects using their fully-qualified names.</p>
+</blockquote>
+<p>应用程序可以使用外部的，用户自定义的类，通过创建可拓展的对象的实例，<br>这需要用到它们的完整的名字。</p>
+<h4 id="2-_Class_Browsers_and_Visual_Development_Environments">2. Class Browsers and Visual Development Environments</h4>
+<blockquote>
+<p>A class browser needs to be able to enumerate the members of classes. Visual development environments can benefit from making use of type information available in reflection to aid the developer in writing correct code.</p>
+</blockquote>
+<p>类浏览器需要能够列举类中的全面成员，可视化开发环境需要使用反射来<br>在开发者编码时提供类型的信息。</p>
+<h4 id="3-_Debuggers_and_Test_Tools">3. Debuggers and Test Tools</h4>
+<blockquote>
+<p>Debuggers need to be able to examine private members on classes. Test harnesses can make use of reflection to systematically call a discoverable set APIs defined on a class, to insure a high level of code coverage in a test suite.</p>
+</blockquote>
+<p>调试工具需要能够测试类中的private成员，测试工具也需要获得类中的全部<br>API来保证测试套件对测试代码覆盖率。</p>
+<hr>
+<h3 id="Java反射中的class">Java反射中的class</h3>
+<p>Java语言中的对象object，要么是一个基本类型，比如boolean, byte, short, int, long, char, float, 或者double；要么是个引用类型，比如java.lang.String，java.lang.Double，或者是java.io.Serializable。</p>
+<p>对于每个对象，Java虚拟机都会有一个不可改的java.lang.Class类型的实例来提供<br>访问那个对象的成员的接口。所有反射的API入口也是在这个java.lang.Class<br>中。<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" target="_blank" rel="external">该类的方法和成员列表</a>。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -93,7 +122,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://xuyunnan.github.io/2014/12/31/Hello-Hexo/" data-title="Hello Hexo | Android和操作系统相关的博客" data-tsina="null" class="share clearfix">
+  <div data-url="http://xuyunnan.github.io/2015/01/03/Java反射机制详解/" data-title="Java反射机制详解 | Android和操作系统相关的博客" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -103,18 +132,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/12/31/Android应用动态分析/" title="Android应用动态分析">
+ <a href="/2015/02/10/Express-js/" title="Express.js">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  Android应用动态分析</span>
+  Express.js</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2014/12/31/hello-world/"  title="Hello World">
+<a href="/2015/01/02/Android动态加载技术分析/"  title="Android动态加载技术分析">
  <strong>NEXT:</strong><br/> 
- <span>Hello World
+ <span>Android动态加载技术分析
 </span>
 </a>
 </div>
@@ -131,7 +160,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java反射机制概述"><span class="toc-number">1.</span> <span class="toc-text">Java反射机制概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java反射的功能举例"><span class="toc-number">1.1.</span> <span class="toc-text">Java反射的功能举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-_Extensibility_Features"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. Extensibility Features</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-_Class_Browsers_and_Visual_Development_Environments"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. Class Browsers and Visual Development Environments</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-_Debuggers_and_Test_Tools"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. Debuggers and Test Tools</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java反射中的class"><span class="toc-number">1.2.</span> <span class="toc-text">Java反射中的class</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
